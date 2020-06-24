@@ -26,3 +26,10 @@ void showMenu(DbEngine& db)
 
     std::cout << ">>> ";
 }
+
+void requireEnter()
+{
+    std::cout << "Нажмите Enter для продолжения... ";
+    while(std::cin.get() != '\n');
+}
+
