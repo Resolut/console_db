@@ -8,6 +8,10 @@ void updateMenu(DbEngine& db);
 
 int main()
 {
+    DbEngine db{};
+    db.loadPeopleFromFile();
+    updateMenu(db);
+
     return 0;
 }
 
