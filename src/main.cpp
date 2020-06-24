@@ -33,3 +33,44 @@ void requireEnter()
     while(std::cin.get() != '\n');
 }
 
+void updateMenu(DbEngine& db)
+{
+    std::string path(getenv("HOME"));
+    int choice;
+    do
+    {
+        showMenu(db);
+
+        (std::cin >> choice).get();
+
+        switch(choice)
+        {
+            case 1:
+                db.addClient();
+                break;
+            case 2:
+                db.showClients();
+                break;
+            case 3:
+                db.savePeopleToFile();
+                break;
+            case 4:
+                db.loadPeopleFromFile();
+                break;
+            case 5:
+                db.searchClient();
+                break;
+            case 6:
+                db.removeClient();
+                break;
+        }
+
+        requireEnter();
+
+        if(path.find("/home") == 0)
+            system("clear");
+        else
+            system("cls");
+
+    } while(choice != 0);
+}
