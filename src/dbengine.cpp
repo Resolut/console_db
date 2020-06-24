@@ -36,3 +36,27 @@ int DbEngine::getClientsCount() const
 {
     return people.size();
 }
+
+
+void DbEngine::removeClient()
+{
+    if (getClientsCount() > 0)
+    {
+        short index;
+        std::cout << "Клиента с каким номером вы желаете удалить? Введите ID: " << std::endl;
+        std::cin >> index;
+
+        if (getClientsCount() >= index && index >= 0)
+        {
+            people.erase(people.begin() + index);
+            _clientCount--;
+            savePeopleToFile();
+        }
+        else
+            std::cout << "Отсутствует клиент с таким ID" << std::endl;
+    }
+    else
+        std::cout << "Нет данных для удаления" << std::endl;
+}
+
+
