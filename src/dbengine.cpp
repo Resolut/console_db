@@ -37,7 +37,6 @@ int DbEngine::getClientsCount() const
     return people.size();
 }
 
-
 void DbEngine::removeClient()
 {
     if (getClientsCount() > 0)
@@ -125,5 +124,35 @@ void DbEngine::savePeopleToFile()
     else
         std::cout << "Ошибка сохранения в файл." << std::endl;
 
+}
+
+void DbEngine::loadPeopleFromFile()
+{
+    std::ifstream file("database.txt");
+
+    if (file.is_open())
+    {
+        file >> _clientCount;
+        people.resize(_clientCount);
+        if (getClientsCount() > 0)
+        {
+            int i = 0;
+            do
+            {
+                file >> people[i].name;
+                file >> people[i].surname;
+                file >> people[i].age;
+                file >> people[i].phone;
+
+                i++;
+            } while(!file.eof());
+
+            std::cout << "Список клиентов успешно загружен. " << std::endl;
+        }
+        else
+            std::cout << "База данных пустая" << std::endl;
+    }
+    else
+        std::cout << "Файл database.txt не существует." << std::endl;
 }
 
