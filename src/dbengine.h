@@ -1,7 +1,7 @@
 #ifndef DBENGINE_H
 #define DBENGINE_H
 
-#include "Person.h"
+#include "person.h"
 #include <vector>
 
 class DbEngine

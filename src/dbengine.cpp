@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include "dbengine.h"
-#include "Person.h"
+#include "person.h"
 
 DbEngine::DbEngine()
 {
