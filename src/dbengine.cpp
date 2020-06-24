@@ -59,4 +59,30 @@ void DbEngine::removeClient()
         std::cout << "Нет данных для удаления" << std::endl;
 }
 
+void DbEngine::searchClient()
+{
+    std::string target;
+    std::cout << "Введите имя клиента для поиска: ";
+    (std::cin >> target).get();
 
+    if (getClientsCount() > 0)
+    {
+        bool founded = false;
+        for (int i = 0; i < getClientsCount(); i++)
+        {
+            if (target == people[i].name)
+            {
+                std::cout << "ID клиента: " << (i+1) << std::endl;
+                std::cout << "Имя: " << people[i].name << std::endl;
+                std::cout << "Фамилия: " << people[i].surname << std::endl;
+                std::cout << "Возраст: " << people[i].age << std::endl;
+                std::cout << "Телефон: " << people[i].phone << std::endl << std::endl;
+                founded = true;
+            }
+        }
+        if (!founded)
+            std::cout << "Не найден клиент с таким именем." << std::endl;
+    }
+    else
+        std::cout << "База данных пустая." << std::endl;
+}
