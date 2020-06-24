@@ -31,3 +31,8 @@ void DbEngine::addClient()
         people.push_back({_name, _surname, _age, _phone});
         _clientCount++;
 }
+
+int DbEngine::getClientsCount() const
+{
+    return people.size();
+}
