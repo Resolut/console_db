@@ -26,8 +26,8 @@ public:
     void savePeopleToFile();
 
 private:
-    int _clientCount;           /// поле хранящее количество клиентов в базе
-    std::vector<Person> people; /// вектор для хранения клиентов
+    int _clientCount;           ///< поле хранящее количество клиентов в базе
+    std::vector<Person> people; ///< вектор для хранения клиентов
 };
 
 #endif // DBENGINE_H

@@ -11,10 +11,10 @@
 
 struct Person
 {
-  std::string name;     /// Имя клиента
-  std::string surname;  /// Фамилия клиента
-  short age;            /// Возраст
-  std::string phone;    /// Контактный номер телефона
+  std::string name;     ///< Имя клиента
+  std::string surname;  ///< Фамилия клиента
+  short age;            ///< Возраст
+  std::string phone;    ///< Контактный номер телефона
 };
 
 #endif // PERSON_H
