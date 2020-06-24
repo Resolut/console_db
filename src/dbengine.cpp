@@ -86,3 +86,21 @@ void DbEngine::searchClient()
     else
         std::cout << "База данных пустая." << std::endl;
 }
+
+void DbEngine::showClients()
+{
+    if(getClientsCount() > 0)
+    {
+        for (int i = 0; i < getClientsCount(); i++)
+        {
+            std::cout << "ID Клиента:\t" << (i+1) << std::endl;
+            std::cout << "Имя:\t\t" << people[i].name << std::endl;
+            std::cout << "Фамилия:\t" << people[i].surname << std::endl;
+            std::cout << "Возраст:\t" << people[i].age << std::endl;
+            std::cout << "Телефон:\t" << people[i].phone << std::endl << std::endl;
+        }
+    }
+    else
+        std::cout << "Нет записей в базе."  << std::endl;
+}
+
