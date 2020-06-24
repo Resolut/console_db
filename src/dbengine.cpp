@@ -104,3 +104,26 @@ void DbEngine::showClients()
         std::cout << "Нет записей в базе."  << std::endl;
 }
 
+void DbEngine::savePeopleToFile()
+{
+    std::ofstream file("database.txt");
+
+    if (file.is_open())
+    {
+        file << getClientsCount() << std::endl;
+
+        for (int i = 0; i < getClientsCount(); i++)
+        {
+            file << people[i].name << std::endl;
+            file << people[i].surname << std::endl;
+            file << people[i].age << std::endl;
+            file << people[i].phone << std::endl;
+        }
+        std::cout << "Данные успешно записаны в файл." << std::endl;
+        file.close();
+    }
+    else
+        std::cout << "Ошибка сохранения в файл." << std::endl;
+
+}
+
