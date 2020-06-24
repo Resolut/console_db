@@ -12,7 +12,7 @@ set(HEADERS
     src/person.h
 )
 
-add_executable(version ${SOURCES} ${HEADERS})
+add_executable(db_client ${SOURCES} ${HEADERS})
 
 set_target_properties(
     version PROPERTIES
